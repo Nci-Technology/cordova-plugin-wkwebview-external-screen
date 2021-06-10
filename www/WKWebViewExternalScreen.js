@@ -8,6 +8,9 @@ var ExternalScreen = {
 	},
 	invokeJavaScript: function (str, success, fail) {
 		cordova.exec(success, fail, "ExternalScreen", 'invokeJavaScript', [str]);
+	},
+	disconnect: function (success, fail) {
+		cordova.exec(success, fail, "ExternalScreen", 'disconnect', []);
 	}
 };
 
