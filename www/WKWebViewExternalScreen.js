@@ -1,5 +1,8 @@
 
 var ExternalScreen = {
+	addEventListener: function (success, fail) {
+		cordova.exec(success, fail, "ExternalScreen", "addEventListener", []);
+	},
 	checkAvailability: function (success, fail) {
 		cordova.exec(success, fail, "ExternalScreen", 'checkAvailability', []);
 	},
@@ -11,6 +14,12 @@ var ExternalScreen = {
 	},
 	disconnect: function (success, fail) {
 		cordova.exec(success, fail, "ExternalScreen", 'disconnect', []);
+	},
+	show: function (success, fail) {
+		cordova.exec(success, fail, "ExternalScreen", "show", []);
+	},
+	hide: function (success, fail) {
+		cordova.exec(success, fail, "ExternalScreen", "hide", []);
 	}
 };
 
