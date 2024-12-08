@@ -38,6 +38,9 @@ NSString* SCREEN_DISCONNECTED =@"disconnected";
         self.externalWebView = [[WKWebView alloc] initWithFrame: screenBounds
                                                   configuration: [[WKWebViewConfiguration alloc] init]];
         self.externalWindow = [[UIWindow alloc] initWithFrame: screenBounds];
+        if (@available(macOS 13.3, iOS 16.4, tvOS 16.4, *)) {
+            self.externalWebView.inspectable = YES;
+        }
         externalScreen.overscanCompensation = UIScreenOverscanCompensationNone;
         [self.externalWebView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
         self.externalWindow.screen = externalScreen;
